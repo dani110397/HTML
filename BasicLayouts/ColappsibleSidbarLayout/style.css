@@ -1,0 +1,136 @@
+:root{
+    --color1: #ccd5ae;
+    --color2: #e9edc9;
+    --color3: #fefae0;
+    --color4: #faedcd;
+    --color5: #d4a373;
+
+    --color-transparent: hsla(0, 0%, 56%, 0.52);
+
+    --mainTextColor: #000000;
+}
+
+html{
+    color: var(--mainTextColor);
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--mainTextColor);
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 5rem;
+    width: 100%;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-element{
+    padding: 0;
+    padding-inline: 1rem;
+}
+
+.header-element img{
+    height: 3rem;
+    width: 3rem;
+}
+
+.sidebar-section{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-transparent);
+    display: flex;
+}
+
+.sidebar-section.hidden{
+    display: none;
+}
+
+.sidebar-section .sidebar{
+    height: 100%;
+    width: 15%;
+    background-color: var(--color3);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-section .sidebar .sidebar-header{
+    height: 5rem;
+    width: 100%;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.sidebar-section .sidebar .sidebar-header img{
+    height: 3rem;
+    width: 3rem;
+    padding-inline-end: 1rem ;
+}
+
+.sidebar-section .sidebar .sidebar-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-section .sidebar-content .sidebar-element{
+    height: 4rem;
+    border-bottom: #000000 1px solid;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    transition: background-color 0.8s;
+}
+
+.sidebar-section .sidebar-content .sidebar-element:hover{
+    background-color: var(--color2);
+}
+
+.sidebar-section .sidebar .sidebar-footer{
+    height: 3rem;
+    background-color: var(--color5);
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider{
+    height: 1.5rem;
+    width: 2.5rem;
+    background-color: lightgrey;
+    border-radius: 2rem;
+    padding-inline: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.slider.on{
+    background-color: green;
+    flex-direction: row-reverse;
+}
+
+.slider div{
+    height: 80%;
+    width: 45%;
+    background-color: white;
+    border-radius: 50%;
+}

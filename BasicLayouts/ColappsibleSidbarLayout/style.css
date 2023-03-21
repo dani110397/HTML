@@ -130,7 +130,7 @@ a{
     width: 100vw;
     height: calc(100vh - var(--header-height));
     padding-top: var(--header-height);
-    padding-inline: 5rem;
+    /* padding-inline: 5rem; */
     background-color: var(--backgroundColor);
     display: flex;
     justify-content: center;

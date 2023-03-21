@@ -56,9 +56,11 @@ a{
     padding-inline: 1rem;
 }
 
-.header-element img{
+.header-element img,
+.header-element svg{
     height: 3rem;
     width: 3rem;
+    color: var(--mainTextColor);
 }
 
 .sidebar-section{
@@ -90,7 +92,8 @@ a{
     align-items: center;
 }
 
-.sidebar-section .sidebar .sidebar-header img{
+.sidebar-section .sidebar .sidebar-header img,
+.sidebar-section .sidebar .sidebar-header svg{
     height: 3rem;
     width: 3rem;
     padding-inline-end: 1rem ;

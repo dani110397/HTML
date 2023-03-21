@@ -1,13 +1,16 @@
 :root{
-    --color1: #ccd5ae;
-    --color2: #e9edc9;
-    --color3: #fefae0;
-    --color4: #faedcd;
-    --color5: #d4a373;
+    --color1: #cfdbd5ff;;
+    --color2: #e8eddfff;
+    --color3: #f5cb5cff;
+    --color4: #242423ff;
+    --color5: #333533ff;
 
     --color-transparent: hsla(0, 0%, 56%, 0.52);
 
     --mainTextColor: #000000;
+    --backgroundColor: #ffffff;
+
+    --header-height: 5rem;
 }
 
 html{
@@ -19,6 +22,17 @@ body{
     margin: 0;
 }
 
+body.dark{
+    --color1: #333533ff;
+    --color2: #242423ff;
+    --color3: #f5cb5cff;
+    --color4: #e8eddfff;
+    --color5: #cfdbd5ff;
+
+    --mainTextColor: #ffffff;
+    --backgroundColor: #000000;
+}
+
 a{
     text-decoration: none;
     color: var(--mainTextColor);
@@ -28,7 +42,7 @@ a{
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 5rem;
+    min-height: var(--header-height);
     width: 100%;
     background-color: var(--color1);
     display: flex;
@@ -110,6 +124,17 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.content{
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    padding-top: var(--header-height);
+    padding-inline: 5rem;
+    background-color: var(--backgroundColor);
+    display: flex;
+    justify-content: center;
+
 }
 
 .slider{

@@ -1,0 +1,44 @@
+:root{
+    --textColorDark: #ffffff;
+    --mainColorDark: #051923;
+    --secundryColorDark: #003554;
+    --tertiaryColorDark: #0582CA;
+    
+    --headerHeight: 5rem;
+    --headerColorDark: hsla(202, 95%, 41%, 0.37);
+
+    --fontSize: 20px;
+}
+
+
+body{
+    font-size: 16px;
+    color: var(--textColorDark);
+    background-color: var(--mainColorDark);
+    margin: 0;
+}
+
+header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--headerHeight);
+    background-color: var(--headerColorDark);
+    /* filter: blur(0.2rem); */
+}
+
+.header-items{
+    padding: 2rem;
+    height: 3rem;
+    width: 8rem;
+}
+
+.header-items .logo{
+    width: 100%;
+}
+
+

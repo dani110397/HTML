@@ -7,5 +7,6 @@ $(function(){
 
     $(".slider").on("click",function(){
         $(this).toggleClass("on");
+        $("body").toggleClass("dark")
     });
 });

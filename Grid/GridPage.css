@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 7% 83% 10%;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: 
+        "sidebarheader header"
+        "sidebar content"
+        "sidebar footer";
+}
+
+header{
+    background-color: blue;
+    grid-area: header;
+}
+header #toggleMenu{
+    margin: 5rem;
+    height: 15rem;
+    width: 15rem;
+}
+
+main.content{
+    background-color: lightcyan;
+    grid-area: content;
+}
+
+footer{
+    background-color: red;
+    grid-area: footer;
+}
+
+/* Sidebar */
+aside.sidebar{
+    color: white;
+    background-color: black;
+    grid-area: sidebar;
+}
+
+body.sidebar-small .sidebar,
+body.sidebar-small .sidebar-header{
+    display: none;
+}
+
+aside.sidebar svg{
+    width: 10rem;
+}
+
+/* Sidebar Small */
+
+body.sidebar-small{
+    grid-template-columns: 3% 97%;
+}
+
+aside.sidebar-small{
+    color: white;
+    background-color: black;
+    grid-area: sidebar;
+    display: none;
+}
+
+body.sidebar-small .sidebar-small,
+body.sidebar-small .sidebar-header-small{
+    display: block;
+}
+
+body .sidebar-small,
+body .sidebar-header-small{
+    display: none;
+}
+
+body.sidebar-small .sidebar-small .sidebar-icon{
+    background-color: red;
+    margin: 2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.sidebar-small .sidebar-small .sidebar-icon svg{
+    width: 8rem;
+}
+
+

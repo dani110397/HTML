@@ -78,7 +78,7 @@ a{
 .sidebar-section .sidebar{
     height: 100%;
     width: 15%;
-    background-color: var(--color3);
+    background-color:var(--backgroundColor);
     display: flex;
     flex-direction: column;
 }
@@ -122,7 +122,8 @@ a{
 
 .sidebar-section .sidebar .sidebar-footer{
     height: 3rem;
-    background-color: var(--color5);
+    background-color: var(--color1);
+    color: var(--mainTextColor);
     padding-inline: 1rem;
     display: flex;
     align-items: center;

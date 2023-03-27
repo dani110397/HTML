@@ -9,4 +9,14 @@ $(function(){
         $(this).toggleClass("on");
         $("body").toggleClass("dark")
     });
+
+    const theme = window.matchMedia("(prefers-color-scheme: dark)");
+    if(theme.matches){
+        $("body").addClass("dark");
+        $(".slider").addClass("on");
+    }
+    else{
+        $("body").removeClass("dark")
+        $(".slider").removeClass("on");
+    }
 });

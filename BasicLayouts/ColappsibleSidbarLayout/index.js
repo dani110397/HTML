@@ -10,7 +10,7 @@ $(function(){
         $("body").toggleClass("dark")
     });
 
-    const theme = window.matchMedia("(prefers-color-schema: dark)");
+    const theme = window.matchMedia("(prefers-color-scheme: dark)");
     if(theme.matches){
         $("body").addClass("dark");
         $(".slider").addClass("on");

@@ -6,17 +6,31 @@ $(function(){
     });
 
     $(".slider").on("click",function(){
-        $(this).toggleClass("on");
-        $("body").toggleClass("dark")
+        $(this).toggleClass("on").trigger("change");
+        $("body").toggleClass("dark");
     });
 
-    const theme = window.matchMedia("(prefers-color-scheme: dark)");
-    if(theme.matches){
-        $("body").addClass("dark");
-        $(".slider").addClass("on");
+
+    if(!localStorage.getItem("theme")){
+        if(window.matchMedia("(prefers-color-scheme: light)").matches){
+            localStorage.setItem("theme","light");
+        }
+        else{
+            localStorage.setItem("theme","dark");
+        }
+    }
+
+    if(localStorage.getItem("theme") == "light"){
+        $("body").removeClass("dark",false);
+        $(".slider").toggleClass("on",false);
     }
     else{
-        $("body").removeClass("dark")
-        $(".slider").removeClass("on");
+        $("body").toggleClass("dark",true);
+        $(".slider").toggleClass("on",true);
     }
+
+    $(".slider").on("change",function(){
+        let theme = $(this).hasClass("on") ? "dark" : "light" ;
+        localStorage.setItem("theme",theme);
+    });
 });

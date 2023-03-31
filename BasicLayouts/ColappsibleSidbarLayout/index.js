@@ -2,7 +2,7 @@ $(function(){
     $(".collapse-sidebar").on("click",function(e){
         e.preventDefault();
         $(".sidebar-section").toggleClass("hidden");
-        $(".sidebar").toggleClass("show");
+        //$(".sidebar").toggleClass("show");
     });
 
     $(".slider").on("click",function(){

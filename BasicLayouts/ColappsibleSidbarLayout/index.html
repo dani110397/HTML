@@ -9,7 +9,7 @@
     <script src="index.js"></script>
     <title>ColappsibleSidbarLayout</title>
 </head>
-<body class="dark">
+<body>
     <section class="header">
         <div class="header-element">
             <a href="#" class="collapse-sidebar">
@@ -26,7 +26,7 @@
             </a>
         </div>
     </section>
-    <section class="sidebar-section">
+    <section class="sidebar-section hidden">
         <div class="sidebar">
             <div class="sidebar-header">
                 <a href="#" class="collapse-sidebar">
@@ -49,10 +49,17 @@
             </div>
         </div>
     </section>
-    <section class="content">Test</section>
+    <section class="content">
+        <p>test</p>
+        <p>test</p>
+    </section>
 </body>
 </html>
 
 <script>
-    fetch("https://top-hat-moose.cyclic.app/").then((result)=>console.log(result))
+    $.get( "https://top-hat-moose.cyclic.app/").then(function( data ) {
+        data.forEach(element => {
+            $(".content").append("<p>"+element.testcol+"</p>");
+        });
+    });
 </script>

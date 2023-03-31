@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../../assets/jquery/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    
+    <div class="wrapper shrink">
+        <a class="icon">
+            click mee
+        </a>
+
+        <div class="content">
+            <p>jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv
+            jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv
+            jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv
+            jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv
+            jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv
+            jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv
+            jhdjdhvcfjhvjhvchgvhgcdvhgvhgvhgvhgvhgvhgvhgvhgvhgvdcsvghcvykgvdghsvkjhgchgvyhgcdvhgdvhcvkdvcgyvdchgyvkdghcvghhgdvghvdhgyvdv</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    $(".icon").on("click",function(){
+       if($(this).closest(".wrapper").hasClass("shrink")){
+        var sHeight = $(this).closest(".wrapper").find(".content").prop("scrollHeight");
+        $(this).closest(".wrapper").find(".content").height(sHeight);
+        $(this).closest(".wrapper").toggleClass("shrink");
+       }
+       else{
+        $(this).closest(".wrapper").find(".content").height(16);
+        $(this).closest(".wrapper").toggleClass("shrink");
+        
+       }
+    });
+
+function collapseSection(element) {
+  
+  var sectionHeight = element.scrollHeight;
+  
+  
+  var elementTransition = element.style.transition;
+  element.style.transition = '';
+  
+  
+  requestAnimationFrame(function() {
+    element.style.height = sectionHeight + 'px';
+    element.style.transition = elementTransition;
+
+    requestAnimationFrame(function() {
+      element.style.height = 0 + 'px';
+    });
+  });
+  
+  element.setAttribute('data-collapsed', 'true');
+}
+
+function expandSection(element) {
+  var sectionHeight = element.scrollHeight;
+  element.style.height = sectionHeight + 'px';
+
+  element.addEventListener('transitionend', function(e) {
+    element.removeEventListener('transitionend', arguments.callee);
+
+    element.style.height = null;
+  });
+
+  element.setAttribute('data-collapsed', 'false');
+}
+</script>

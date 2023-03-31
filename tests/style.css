@@ -1,0 +1,12 @@
+
+.content{
+    height: auto;
+    background-color: lightblue;
+    overflow: hidden;
+    transition: height 0.2s;
+}
+
+.wrapper.shrink .content{
+    height: 2rem;
+    transition: height 0.2s;
+}
